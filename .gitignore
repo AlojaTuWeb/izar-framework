@@ -1,1 +1,5 @@
+/.idea/
+/cache/views/
 /vendor/
+access_log
+error_log
