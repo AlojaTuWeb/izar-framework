@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div style="padding: 15px;">
         <h2>
-            Dashboard Page. Welcome <?php echo e($name); ?>
+            Dashboard Page <?php echo e($name); ?>
 
         </h2>
     </div>

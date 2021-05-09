@@ -3,7 +3,7 @@
 @section('content')
     <div style="padding: 15px;">
         <h2>
-            {{ $name }} Home Page
+            Home Page {{ $name }}
         </h2>
     </div>
 @stop

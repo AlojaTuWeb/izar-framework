@@ -1,7 +1,8 @@
 <?php $__env->startSection('content'); ?>
     <div style="padding: 15px;">
         <h2>
-            <?php echo e($name); ?> Home Page
+            Home Page <?php echo e($name); ?>
+
         </h2>
     </div>
 <?php $__env->stopSection(); ?>

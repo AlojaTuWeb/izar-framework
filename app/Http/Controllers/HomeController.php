@@ -24,12 +24,12 @@ class HomeController
 
     /**
      * @param  View  $view
-     * @param $name
-     * @param $id
      * @return ResponseInterface
      */
-    public function show(View $view, $name, $id)
+    public function show(View $view)
     {
-        return $view('dashboard.home', compact('name', 'id'));
+        $name = 'Admin';
+
+        return $view('dashboard.home', compact('name'));
     }
 }
