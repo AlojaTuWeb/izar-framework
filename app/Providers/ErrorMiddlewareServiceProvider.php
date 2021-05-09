@@ -2,9 +2,16 @@
 
 namespace App\Providers;
 
+/**
+ * Class ErrorMiddlewareServiceProvider
+ * @package App\Providers
+ */
 class ErrorMiddlewareServiceProvider extends ServiceProvider
 {
 
+    /**
+     *
+     */
     public function register()
     {
         $this->app->addErrorMiddleware(
@@ -14,6 +21,9 @@ class ErrorMiddlewareServiceProvider extends ServiceProvider
         );
     }
 
+    /**
+     *
+     */
     public function boot()
     {
         // TODO: Implement boot() method.

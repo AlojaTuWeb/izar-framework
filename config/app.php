@@ -1,9 +1,13 @@
 <?php
 
+use App\Providers\ErrorMiddlewareServiceProvider;
+use App\Providers\RouteServiceProvider;
+use App\Providers\ViewServiceProvider;
+
 return [
     'providers' => [
-        \App\Providers\ViewServiceProvider::class,
-        \App\Providers\RouteServiceProvider::class,
-        \App\Providers\ErrorMiddlewareServiceProvider::class,
+        ViewServiceProvider::class,
+        RouteServiceProvider::class,
+        ErrorMiddlewareServiceProvider::class,
     ]
 ];

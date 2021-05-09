@@ -5,10 +5,21 @@ namespace App\Support;
 use Illuminate\Support\Str;
 use Slim\App;
 
+/**
+ * Class Route
+ * @package App\Support
+ */
 class Route
 {
+    /**
+     * @var App
+     */
     public static App $app;
 
+    /**
+     * @param  App  $app
+     * @return App
+     */
     public static function setup(App &$app)
     {
         self::$app = $app;
@@ -16,6 +27,11 @@ class Route
         return $app;
     }
 
+    /**
+     * @param $verb
+     * @param $parameters
+     * @return mixed
+     */
     public static function __callStatic($verb, $parameters)
     {
         $app = self::$app;
@@ -29,6 +45,10 @@ class Route
             : $app->$verb($route, self::resolveViaController($action));
     }
 
+    /**
+     * @param $action
+     * @return array
+     */
     public static function resolveViaController($action)
     {
         $class = Str::before($action, '@');
@@ -38,6 +58,11 @@ class Route
         return [$controller, $method];
     }
 
+    /**
+     * @param $route
+     * @param $verb
+     * @param $action
+     */
     protected static function validation($route, $verb, $action)
     {
         $exception = "Unresolvable Route callback/Controller action";

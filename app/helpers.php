@@ -5,8 +5,6 @@
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Jenssegers\Blade\Blade;
-use Psr\Http\Message\ResponseInterface as Response;
 
 /*
  * base_path
@@ -26,6 +24,10 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 if (!function_exists('base_path'))
 {
+    /**
+     * @param  string  $path
+     * @return string
+     */
     function base_path($path = '')
     {
         return __DIR__ . "/../{$path}";
