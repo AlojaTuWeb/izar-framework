@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\View;
+
 class HomeController
 {
-    public function index($response)
+    public function index(View $view)
     {
-        $response->getBody()->write('HomeController page!!');
+        $name = 'Izar-framework';
 
-        return $response;
+        return $view('home', compact('name'));
     }
 
-    public function show($response, $name, $id)
+    public function show(View $view, $name, $id)
     {
-        $response->getBody()->write("Welcome {$name} you have an id of {$id}");
-
-        return $response;
+        return $view('dashboard.home', compact('name', 'id'));
     }
 }
