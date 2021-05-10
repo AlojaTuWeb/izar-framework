@@ -1,4 +1,5 @@
 /.idea/
 /vendor/
+.env
 access_log
 error_log

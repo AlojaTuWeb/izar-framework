@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 /*
+ * env
  * base_path
  * config_path
  * resources_path
@@ -21,6 +22,18 @@ use Illuminate\Support\Str;
  * data_get
  * data_set
  */
+
+if (!function_exists('env'))
+{
+    function env($key, $default = false)
+    {
+        $value = getenv($key);
+
+        throw_when(!$value and !$default, "{$key} is not a defined .env variable and has not default variable.");
+
+        return $value or $default;
+    }
+}
 
 if (!function_exists('base_path'))
 {

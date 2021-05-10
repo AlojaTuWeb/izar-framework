@@ -16,7 +16,10 @@ class ErrorMiddlewareServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->add(new WhoopsMiddleware());
+        if (env('APP_DEBUG', false))
+        {
+            $this->app->add(new WhoopsMiddleware());
+        }
     }
 
     /**

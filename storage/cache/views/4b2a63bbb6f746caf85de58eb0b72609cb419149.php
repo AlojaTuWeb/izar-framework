@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div style="padding: 15px;">
         <h2>
-            Dashboard Page <?php echo e($name); ?>
+            Dashboard Page <?php echo e(env('NON_EXISTING_ENV_VALUE', 'Value Default To Me!!')); ?>
 
         </h2>
     </div>
