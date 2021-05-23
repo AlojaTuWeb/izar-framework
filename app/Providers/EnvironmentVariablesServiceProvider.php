@@ -7,7 +7,6 @@ use Dotenv\Exception\InvalidPathException;
 
 class EnvironmentVariablesServiceProvider extends ServiceProvider
 {
-
     /**
      * @inheritDoc
      */

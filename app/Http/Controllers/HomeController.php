@@ -30,6 +30,6 @@ class HomeController
     {
         $name = 'Admin';
 
-        return $view('dashboard.home', compact('name'));
+        return $view('tests', compact('name'));
     }
 }
