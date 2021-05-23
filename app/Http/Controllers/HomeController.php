@@ -19,9 +19,8 @@ class HomeController
      */
     public function index(View $view, User $user)
     {
-        $user = $user->find(1);
-        $name = 'Izar-framework';
+        $users = $user->get();
 
-        return $view('home', compact('name', 'user'));
+        return $view('home', compact( 'users'));
     }
 }

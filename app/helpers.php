@@ -7,6 +7,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 /*
+ * collect
+ * factory
  * env
  * base_path
  * database_path
@@ -23,6 +25,24 @@ use Illuminate\Support\Str;
  * data_get
  * data_set
  */
+
+if (!function_exists('collect'))
+{
+    function collect($items)
+    {
+        return new Collection($items);
+    }
+}
+
+if (!function_exists('factory'))
+{
+    function factory(string $model, int $count = 1)
+    {
+        $factory = new Factory();
+
+        return $factory($model, $count);
+    }
+}
 
 if (!function_exists('env'))
 {
