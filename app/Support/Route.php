@@ -3,7 +3,6 @@
 namespace App\Support;
 
 use Illuminate\Support\Str;
-use Slim\App;
 
 /**
  * Class Route
@@ -11,16 +10,9 @@ use Slim\App;
  */
 class Route
 {
-    /**
-     * @var App
-     */
-    public static App $app;
+    public static $app;
 
-    /**
-     * @param  App  $app
-     * @return App
-     */
-    public static function setup(App &$app)
+    public static function setup(&$app)
     {
         self::$app = $app;
 

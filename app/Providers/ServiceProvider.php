@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Psr\Container\ContainerInterface;
 use Slim\App;
 
 /**
@@ -14,6 +15,7 @@ abstract class ServiceProvider
      * @var App
      */
     public App $app;
+    public ContainerInterface $container;
 
     /**
      * ServiceProvider constructor.
@@ -22,6 +24,7 @@ abstract class ServiceProvider
     final public function __construct(App &$app)
     {
         $this->app = $app;
+        $this->container = $this->app->getContainer();
     }
 
     /**
@@ -33,6 +36,16 @@ abstract class ServiceProvider
      * @return mixed
      */
     abstract public function boot();
+
+    public function bind($key, callable $resolvable)
+    {
+        $this->container->set($key, $resolvable);
+    }
+
+    public function resolve($key)
+    {
+        return $this->container->get($key);
+    }
 
     /**
      * @param  App  $app

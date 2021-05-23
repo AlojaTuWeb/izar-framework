@@ -21,15 +21,4 @@ class HomeController
 
         return $view('home', compact('name'));
     }
-
-    /**
-     * @param  View  $view
-     * @return ResponseInterface
-     */
-    public function show(View $view)
-    {
-        $name = 'Admin';
-
-        return $view('tests', compact('name'));
-    }
 }
