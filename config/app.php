@@ -1,7 +1,6 @@
 <?php
 
 use App\Providers\DatabaseServiceProvider;
-use App\Providers\RouteServiceProvider;
 use App\Providers\ViewServiceProvider;
 
 return [
@@ -10,7 +9,6 @@ return [
     'providers' => [
         DatabaseServiceProvider::class,
         ViewServiceProvider::class,
-        RouteServiceProvider::class,
     ],
     'aliases' => [
         'DB' => \Illuminate\Database\Capsule\Manager::class,

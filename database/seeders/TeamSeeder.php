@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Team;
+use App\Models\User;
 use Phinx\Seed\AbstractSeed;
 
-class UserTableSeeder extends AbstractSeed
+class TeamSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -14,8 +16,10 @@ class UserTableSeeder extends AbstractSeed
      */
     public function run()
     {
-        factory(App\Models\User::class, 10)->create([
-            'first_name' => 'Iván'
-        ]);
+        $users = factory(User::class, 10)->create();
+
+        $users->each(fn ($user) => factory(Team::class, 1)->create([
+            'user_id' => $user->id
+        ]));
     }
 }
