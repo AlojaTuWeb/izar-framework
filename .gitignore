@@ -1,5 +1,6 @@
 /.idea/
 /vendor/
+/node_modules/
 .env
 access_log
 error_log

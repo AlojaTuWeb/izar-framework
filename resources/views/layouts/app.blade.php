@@ -8,8 +8,11 @@
     <title>{{ env('APP_NAME', 'Izar-framework') }}</title>
 </head>
 <body>
-    <div>
+    <div id="app">
+        <h1>Izar-Framework</h1>
         @yield('content')
     </div>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>
