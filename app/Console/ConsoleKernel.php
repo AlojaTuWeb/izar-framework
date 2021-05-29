@@ -12,7 +12,17 @@ class ConsoleKernel extends Kernel
         Commands\DatabaseRunSeederCommand::class,
         Commands\DatabaseMigrateCommand::class,
         Commands\DatabaseRollbackMigrationCommand::class,
+        Commands\MakeCommandCommand::class,
+        Commands\MakeControllerCommand::class,
+        Commands\MakeEventCommand::class,
+        Commands\MakeFactoryCommand::class,
+        Commands\MakeListenerCommand::class,
+        Commands\MakeMiddlewareCommand::class,
         Commands\MakeMigrationCommand::class,
+        Commands\MakeModelCommand::class,
+        Commands\MakeRequestCommand::class,
         Commands\MakeSeederCommand::class,
+        Commands\MakeServiceProviderCommand::class,
+        Commands\ViewClearCommand::class,
     ];
 }

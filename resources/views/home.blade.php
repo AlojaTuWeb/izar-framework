@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="bt-white shadow-md hover:shadow-xl rounded-lg border-2 w-1/2 p-4 mt-10 ml-80">
+    <div class="bt-white shadow-md hover:shadow-xl rounded-lg border-2 w-1/2 p-4 mt-40 ml-80">
         <h1 class="flex justify-center text-6xl text-gray-800 font-semibold">
             {{ env('APP_NAME') }}
         </h1>
