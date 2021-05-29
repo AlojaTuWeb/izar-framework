@@ -1,6 +1,8 @@
 const mix = require('laravel-mix')
 const path =require('path')
 
+const tailwindcss = require('tailwindcss')
+
 /**
  *  Mix Asset Manager
  * ------------------
@@ -8,4 +10,9 @@ const path =require('path')
  * the webpack build steps/life cycle
  */
 
-mix.js('resources/js/main.js', 'public/js').vue({ version: 2 });
+mix.js('resources/js/main.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [ tailwindcss('./tailwind.config.js')]
+    }).vue({ version: 2 });

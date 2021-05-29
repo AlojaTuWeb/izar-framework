@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#content {
+  padding: 200px;
+  height: 100vh !important;
+  width: 100% !important;
+  background-color: #fff !important;
+  overflow-x: hidden !important;
+}
