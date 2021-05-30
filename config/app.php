@@ -2,6 +2,8 @@
 
 use App\Providers\DatabaseServiceProvider;
 use App\Providers\ViewServiceProvider;
+use App\Support\Auth;
+use Illuminate\Database\Capsule\Manager;
 
 return [
     'name' => env('APP_NAME', 'Izar-framework'),
@@ -11,6 +13,7 @@ return [
         ViewServiceProvider::class,
     ],
     'aliases' => [
-        'DB' => \Illuminate\Database\Capsule\Manager::class,
+        'Auth' => Auth::class,
+        'DB' => Manager::class,
     ]
 ];

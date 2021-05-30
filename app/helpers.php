@@ -2,11 +2,13 @@
 
 /* Global Helpers Functions */
 
+use App\Support\Redirect;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 /*
+ * redirect
  * collect
  * factory
  * env
@@ -25,6 +27,16 @@ use Illuminate\Support\Str;
  * data_get
  * data_set
  */
+
+if (!function_exists('redirect'))
+{
+    function redirect(string $to)
+    {
+        $redirect = app()->resolve(Redirect::class);
+
+        return $redirect($to);
+    }
+}
 
 if (!function_exists('collect'))
 {
